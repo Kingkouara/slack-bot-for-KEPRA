@@ -1,4 +1,8 @@
-const functions = require("firebase-functions");
+import * as functions from "firebase-functions";
+import { expressReceiver } from "./slack/app";
+
+export const slack = functions.https.onRequest(expressReceiver.app);
+
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
